@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+    /*setup*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+@font-face {
+  font-family: 'Iceland';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Iceland'), local('Iceland-Regular'), url(http://themes.googleusercontent.com/static/fonts/iceland/v3/F6LYTZLHrG9BNYXRjU7RSw.woff) format('woff');
+}
+*/
+        
+body {
+  background-color: #222222;
+/*  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;*/
+}
+
+        
+#container {
+  width: 500px;
+  margin: auto;
+}
+/*neeeeoooon*/
+
+p {
+  text-align: center;
+  font-size: 17em;
+  margin: 20px 0 20px 0;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+        
+p:nth-child(1) a {
+  font-size: 1.5em;
+  color: #99CCFF;
+  font-family: sans-serif;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+/*  font-family: Iceland;*/
+}
+
+p:nth-child(1) a:hover {
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+p a:hover {
+  color: #ffffff;
+}
+        
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #99CCFF, 0 0 70px #99CCFF, 0 0 80px #99CCFF, 0 0 100px #99CCFF, 0 0 150px #99CCFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #99CCFF, 0 0 35px #99CCFF, 0 0 40px #99CCFF, 0 0 50px #99CCFF, 0 0 75px #99CCFF;
+  }
+}
+        
+/*REEEEEEEEEEESPONSIVE*/
+
+@media (max-width: 650px) {
+  #container {
+    width: 100%;
+  }
+  p {
+    font-size: 3.5em;
+  }
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+
+<!--
+  <p><a href="#">
+    RED
+  </a></p>
+-->
+
+  <p><a href="#">
+    &dagger;
+  </a></p>
+
+<!--
+  <p><a href="#">
+    Yellow
+  </a></p>
+-->
+
+<!--
+  <p><a href="#">
+    GREEN
+  </a></p>
+-->
+
+<!--
+  <p><a href="#">
+    ORANGE
+  </a></p>
+
+  <p><a href="#">
+    VIOLET
+  </a></p>
+-->
+
+</div>
+</body>
+</html>

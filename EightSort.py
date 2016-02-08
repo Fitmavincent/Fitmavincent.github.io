@@ -11,6 +11,7 @@ def insert_sort(lists):
             j -= 1
     return lists
 
+
 #Shell Sort
 def shell_sort(lists):
     count = len(lists)
@@ -31,6 +32,7 @@ def shell_sort(lists):
         group /= step
     return lists
 
+
 #Bubble Sort
 def bubble_sort(lists):
     count = len(lists)
@@ -40,7 +42,8 @@ def bubble_sort(lists):
                 lists[i], lists[j] = lists[j], lists[i]
     return lists
 
-#Quick Sort
+
+#Quick Sort // !!! expected case: O(nlog(n)); worst case: O(n^2)
 def quick_sort(list, left, right):
     if left >= right:
         return lists
@@ -59,6 +62,7 @@ def quick_sort(list, left, right):
     quick_sort(lists, left+1, high)
     return lists
 
+
 #Selection Sort
 def select_sort(lists):
     count  = len(lists)
@@ -69,6 +73,7 @@ def select_sort(lists):
                 min = j
         lists[min], lists[i] = lists[i], lists[min]
     return lists
+
 
 #Heap Sort
 def adjust_heap(lists, i, size):
@@ -95,7 +100,8 @@ def heap_sort(lists):
         lists[0], lists[i] = lists[i], lists[0]
         adjust_heap(lists, 0, i)
 
-#Merge Sort
+
+#Merge Sort // worst case: O(n)
 def merge(left, right):
     i, j = 0, 0
     result = []
@@ -118,8 +124,8 @@ def merge_sort(lists):
     right = merge_sort(lists[num:])
     return merge(lefrt, right)
 
-#Radix Sort
 
+#Radix Sort
 import math
 def radix_sort(lists, radix=10):
     k = int(math.ceil(math.log(max(lists), radix)))

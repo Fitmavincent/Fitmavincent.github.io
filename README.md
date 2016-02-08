@@ -1,5 +1,5 @@
 # SmallThings
-This is repo is mainly for experiments and cloud storing my stupid little lousy code.
+This repo is mainly for experiments and cloud storing my stupid little lousy code.
 
 EightSort is the popular sorting algorithm written in Python. 
 (Should start Java version of it)

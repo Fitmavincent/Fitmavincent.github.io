@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Vincent's Domain</title>
-    <meta name="description" content="This is Vincent's Webpage. Introducing Vincent Liang" />
-    <meta name="keyword" content="Vincent, Resume" />
+    <meta name="description" content="This is Vincent's Map. He likes maps" />
+    <meta name="keyword" content="Vincent, Map, Google Map" />
 
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
@@ -24,7 +24,7 @@
 <div class="top-bar" id="top-nav">
 <div class="top-bar-left">
   <ul class="vertical medium-horizontal menu">
-    <li><a href="#">About Me</a></li>
+    <li><a href="index.html">About Me</a></li>
     <li><a href="#">Resume</a></li>
     <li><a href="https://github.com/Fitmavincent">Github</a></li>
     <li><a href="https://au.linkedin.com/in/fitmavincent">LinkedIn</a></li>
@@ -35,41 +35,9 @@
 
 <!-- End Right Nav -->
 
+<div id="map"></div>
 
 
-<!-- Main content -->
-    <!-- <div class="row">
-      <div class="large-12 columns">
-        <h2>Vincent</h2>
-      </div>
-    </div> -->
-
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
-          <h2><strong>Vincent</strong></h2>
-          <p><strong>Who am I? It's none of your business</strong></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
-        <p> large column</p>
-      </div>
-      </div>
-    </div>
-
-
-
-    <!-- <div class="row">
-      <div class="large-8 medium-8 columns">
-        <div class="callout">
-        <p> medium column</p>
-      </div>
-      </div>
-    </div> -->
 
 
   <script src="js/vendor/jquery.min.js"></script>
@@ -79,6 +47,9 @@
   <script>
     $(document).foundation();
   </script>
+  <script src=js/map.js></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7XoP8FsepuRH5ol0pAmS4Xs3CSN5a8ds&callback=initMap" async defer></script>
+
 
   </body>
 </html>

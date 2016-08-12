@@ -1,3 +1,7 @@
+// $(document).ready(function(){
+//
+// });
+
 $.ajax({
     type:"GET",
     url: "rndtest.shortcuts.com.au",
@@ -7,5 +11,5 @@ $.ajax({
     error: function(jqXHR, textStatus, errorThrown) {
             alert(jqXHR.status);
         },
-   dataType: "jsonp"
+   dataType: "json"
 });

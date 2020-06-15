@@ -3,7 +3,7 @@ module.exports = {
     title: `Vince Blog`,
     author: {
       name: `Vince`,
-      summary: `Who am I, It's none of your business`,
+      summary: `Who am I? It's none of your business`,
     },
     description: `A personal blog that recording what I learn & how I feel.`,
     siteUrl: `https://fitmavincent.github.io/`,

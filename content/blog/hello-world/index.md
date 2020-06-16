@@ -2,6 +2,7 @@
 title: Hello World
 date: "2020-06-15 18:00:00"
 description: "龙，龍"
+cover: "./misty.jpg"
 ---
 
 This is my first post.

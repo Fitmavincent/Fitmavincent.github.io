@@ -5,6 +5,16 @@ module.exports = {
       name: `Vince`,
       summary: `Who am I? It's none of your business`,
     },
+    menuLinks:[
+      {
+        name: `Blog`,
+        url: `/`,
+      },
+      {
+        name: `About`,
+        url: `/about`,
+      },
+    ],
     description: `A personal blog that recording what I learn & how I feel.`,
     siteUrl: `https://fitmavincent.github.io/`,
     social: {

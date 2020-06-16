@@ -1,6 +1,7 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -18,6 +19,7 @@ type Data = {
       node: {
         excerpt: string
         frontmatter: {
+          cover: any
           title: string
           date: string
           description: string
@@ -52,6 +54,14 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   {title}
                 </Link>
               </h3>
+              <Image
+                fixed={node.frontmatter.cover.childImageSharp.fixed}              
+                style={{
+                  marginRight: rhythm(1 / 2),
+                  marginBottom: 0,
+                  minWidth: 50,                
+                }}
+              />
               <small>{node.frontmatter.date}</small>
             </header>
             <section>
@@ -95,6 +105,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            cover {
+              childImageSharp{
+                fixed(width: 590, height: 150){
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

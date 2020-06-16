@@ -1,12 +1,13 @@
 ---
 title: Hello World
-date: "2020-06-15T00:00:00.284Z"
-description: "Long"
+date: "2020-06-15 18:00:00"
+description: "龙，龍"
 ---
 
 This is my first post.
 
-Just wanna share my recent feelings toward ... 
+Just wanna share my affection towards ... 
+
 ![迷雾](./misty.jpg)
 
 Oh, and here's a great quote from this Wikipedia on

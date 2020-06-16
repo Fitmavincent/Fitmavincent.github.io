@@ -1,6 +1,6 @@
 ---
-title: Under construction
-date: "2020-06-15T10:40:32.169Z"
+title: underconstruction
+date: "2020-06-15 20:30:00"
 description: Sample from Gatsby. This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 

@@ -11,7 +11,7 @@ const About = ({ data, location }) => {
   return (    
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />      
-      <p>About this Vince. Not much to say. One word: <strong>Speechless</strong></p>
+      <p>About this Vince. He is label as: <strong>Obscure Language Developer</strong></p>
     </Layout>
   )
 }

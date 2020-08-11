@@ -3,7 +3,7 @@ module.exports = {
     title: `Vince Blog`,
     author: {
       name: `Vince`,
-      summary: `Who am I? It's none of your business`,
+      summary: `Who am I? I'm just a software engineer`,
     },
     menuLinks:[
       {
@@ -86,6 +86,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

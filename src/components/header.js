@@ -2,50 +2,50 @@ import React from "react"
 import { Link } from "gatsby"
 import Navigation from "../components/navigation"
 
+import style from "styled-components"
 import { rhythm, scale } from "../utils/typography"
 
 const Header = ({ location, title }) => {
+  const H1 = style.h1`
+    ...${scale(1.5)}
+    margin-bottom: ${rhythm(1.5)};
+    margin-top: 0; 
+  `
+
+  const H3 = style.h3`
+    font-family: Montserrat, sans-serif;
+    margin-top: 0,
+  `
+
+  const linkStyle = {
+    boxShadow: `none`,
+    color: `inherit`,
+  }
+
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
+      <H1>
         <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
+          style={linkStyle}
           to={`/`}
         >
           {title}
         </Link>
-      </h1>
+      </H1>
     )
   } else {
     header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
+      <H3>
         <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
+          style={linkStyle}
           to={`/`}
         >
           {title}
         </Link>
-      </h3>
+      </H3>
     )
   }
   return(    

@@ -1,7 +1,12 @@
 import React from "react"
+
+import '../styles/global.css'
+
 import Header from "../components/header"
 import {rhythm} from "../utils/typography"
 import styled from "styled-components"
+
+import Toggler from '../components/Toggler'
 
 const Layout = ({ location, title, children }) => {
   const Container = styled.div`
@@ -15,7 +20,14 @@ const Layout = ({ location, title, children }) => {
     font-size: ${rhythm(0.5)};
   `
   return (
-    <Container>      
+    <Container
+      style={{
+        backgroundColor: 'var(--bg)',
+        color: 'var(--textNormal)',
+        transition: 'color 0.2s ease-out, background 0.2s ease-out',
+      }}
+    >
+      <Toggler></Toggler>  
       <Header location={location} title={title} />
       <main>{children}</main>
       <Footer>

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"3XHS":function(t,e,a){"use strict";a.r(e);var n=a("q1tI"),l=a.n(n),o=(a("LbRr"),a("Bl7J")),r=a("vrFN");e.default=function(t){var e=t.data,a=t.location,n=e.site.siteMetadata.title;return l.a.createElement(o.a,{location:a,title:n},l.a.createElement(r.a,{title:"About"}),l.a.createElement("p",null,"About Vince. He is no rock star, just a ",l.a.createElement("strong",null,"Developer")))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-d80ff61e225debc57261.js.map

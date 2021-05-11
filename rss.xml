@@ -1,4 +1,161 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vince Blog]]></title><description><![CDATA[A personal blog that recording what I learn & how I feel.]]></description><link>https://fitmavincent.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 18 Feb 2021 23:14:52 GMT</lastBuildDate><item><title><![CDATA[underconstruction]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vince Blog]]></title><description><![CDATA[A personal blog that recording what I learn & how I feel.]]></description><link>https://fitmavincent.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 11 May 2021 10:20:33 GMT</lastBuildDate><item><title><![CDATA[AWS CDK Azure Pipeline]]></title><description><![CDATA[Lesson learn with AWS CDK, Azure Pipeline Intro As per requested at work to build a modulised, scalable infrastructure, I’ve been messing…]]></description><link>https://fitmavincent.github.io/aws-cdk-azure-pipeline/</link><guid isPermaLink="false">https://fitmavincent.github.io/aws-cdk-azure-pipeline/</guid><pubDate>Tue, 11 May 2021 08:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Lesson learn with AWS CDK, Azure Pipeline&lt;/h1&gt;
+&lt;h2&gt;Intro&lt;/h2&gt;
+&lt;p&gt;As per requested at work to build a modulised, scalable infrastructure, I’ve been messing around the AWS CDK. It’s quite a powerful tool to provision AWS infrastructure without touching the stupid &lt;code class=&quot;language-text&quot;&gt;yml&lt;/code&gt; file &lt;strong&gt;&lt;em&gt;(Ya, it’s you &lt;code class=&quot;language-text&quot;&gt;CloudFormation&lt;/code&gt;)&lt;/em&gt;.&lt;/strong&gt; However the process hasn’t been smooth. Therefore, in this post, I just want to write down and summarise what I come across. &lt;strong&gt;This is not a tutorial&lt;/strong&gt;. For that you got a great blog from &lt;code class=&quot;language-text&quot;&gt;Carlos&lt;/code&gt; &lt;a href=&quot;https://www.mytechramblings.com/posts/provisioning-aws-resources-using-cdk-azure-devops/&quot;&gt;Provisioning resources on AWS using AWS CDK and Azure DevOps Pipelines&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;Simply put: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;The lesson&lt;/h2&gt;
+&lt;p&gt;Let’s look at all the errors…&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4ab066c82ffb6f3fbd418d8b595902f6/20751/massive-failure.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 111.48648648648648%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACOUlEQVQ4y41UDZeiMAz0///Ju327KoV+QguoYDYTQCmwt8d7UazNdJLM9OS9p0IpKosv0pc/VFaatK44NIUQqOu6KfqeknPUxijvWOv521or+/Deti2d8OF9oOAMBaMo1A3VdeCoJWkcxymeT3qkSMPtJu/Lekop23dqeaHShmx1Ja8+yDoGZ9Zgjo14ngyAZ2QWz2HI1gB440OWtROSFoa1BcNa2DVNIyVgkwQnDJw83u/yvgBiD+IFiB8GfbAV1fosJQMMgb6sAYXh47EDxL4M0HKzvSnJV+eJbfDS6B3DNmeIWHq4YwjAwAydAL6HsmPIPfwnw77vpG9NsBRdQTG1fGp8NXsNiClvGeLQbCiRdaVUSZW6kLl+iA6NQRjCf8tGYYgDNgzRaxz+AgR6ExOl2lHyilLbcRlJSrmDzS9TRrkZQ6Br6FArsuXXNCDvRIc4PQPk5PFgyjh4M2UWMlxSfZIPkw6PhjLAESvAZcoZIJICQHgojSupnjWI/h3KZsMQ+RmglGwsOV2I9RyDQzaHOjwo+Ufrecu3i2Y/h7cOsRmG/0nYSw9zwNkptdPUmAuXHLncqeSt9YYD6+10iBMcbhf2slhvVfKOYdpb72DKiUVsRTau/JwmPl9fAPzNerspo6yGy8uEndKrN5n14rH1HtyGt/VYIkWhqCrOpK9/Z+sZCQwmY4jbesMQvc56eLsxQwwCDJ2aL4ckgZP/R4cZQyygb7hgcX0tTskuhjl54DaMq+QjYX8DmYuzxKEvroIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Massive Failure&quot;
+        title=&quot;Massive Failure&quot;
+        src=&quot;/static/4ab066c82ffb6f3fbd418d8b595902f6/fcda8/massive-failure.png&quot;
+        srcset=&quot;/static/4ab066c82ffb6f3fbd418d8b595902f6/12f09/massive-failure.png 148w,
+/static/4ab066c82ffb6f3fbd418d8b595902f6/e4a3f/massive-failure.png 295w,
+/static/4ab066c82ffb6f3fbd418d8b595902f6/fcda8/massive-failure.png 590w,
+/static/4ab066c82ffb6f3fbd418d8b595902f6/efc66/massive-failure.png 885w,
+/static/4ab066c82ffb6f3fbd418d8b595902f6/20751/massive-failure.png 1037w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The error occured when the build is executing a &lt;code class=&quot;language-text&quot;&gt;npm run build&lt;/code&gt; after &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e74d0116244c8a12c7df70236008c517/6569d/dependency-error.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92.56756756756756%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACSElEQVQ4y31UWbKjMAzkHhOyQYIBYyDskOXd/1IatUAMSV7Nh0q2bLe6JYFXpQk5ayljn7M30ZX2/o4Oe/+fHfbve7bjEgvOJypyR9am/M4nL7UxuTKjLLfi4ziSS2r6cOvVdH+5hBTi7vFAXl4wmEupaSoyDAaGJmJvIorNvL+EwRfYFhSK/N0fJpMwYMbMmG7fNtRUNyqZfuEyyp0lnNk0pjA4f5fhQz7OkyQlryhvVNwqSm1GScoALqc0c5RYRzHvw8hQEF7oxHLOp+Ob3xqAwyAgbxpHer2edJ8mlt1wcbkxxlAksg3LiGV9ZdlXrhXkR9eLrMFcYwLI3qtvJbV1JXIhu65KlpuJXJWMB2IMAA+gcFmDrUoXQDx2eMw+41oiOxqBhmCNB/8zyNXmCKDl+cMcATSJzduobDv72YTPOytgmsTCTD2YQQ4yYxR0JOB1rftfAcsiJ9g8KrN8gMOwRhLEoURjWh5Vo7ZnUG8aeno9HzSNAw1dS+PQsfXUcYPQJKzlrO84VktcY7eykC6DLQB3zNzDwQrYd+vlhjsvoJxEz7BGHPs7W9vU0mltjL/bkQeA5+MuQL0wnNnB8EDjsJpHC/uZbSNN1HlEDb8ARzBkAxBM2Sm4JFhUgCnGavuT8D8lz9lbqR0eYz0soNgD5D6NM2u+o0P+Bgj6j/u01kjrpAzxEMCQK7GlKZgME/3CEBl/5FueMwMcQFo/aQCfISESSYn4DjxGaTvoAoj6TEsjlAW+bTCYmVZrQ8rCrZ3Hve3IKOBfV6k4eGp9oucAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;fisrt error&quot;
+        title=&quot;fisrt error&quot;
+        src=&quot;/static/e74d0116244c8a12c7df70236008c517/fcda8/dependency-error.png&quot;
+        srcset=&quot;/static/e74d0116244c8a12c7df70236008c517/12f09/dependency-error.png 148w,
+/static/e74d0116244c8a12c7df70236008c517/e4a3f/dependency-error.png 295w,
+/static/e74d0116244c8a12c7df70236008c517/fcda8/dependency-error.png 590w,
+/static/e74d0116244c8a12c7df70236008c517/efc66/dependency-error.png 885w,
+/static/e74d0116244c8a12c7df70236008c517/c83ae/dependency-error.png 1180w,
+/static/e74d0116244c8a12c7df70236008c517/6569d/dependency-error.png 1328w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The “Cannot find module” should’ve trigger some alarm bells in my head regarding the &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt;. Yet I went a big route to debug, look for &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt;, whether that exists or not etc. &lt;/p&gt;
+&lt;p&gt;And this line &lt;code class=&quot;language-text&quot;&gt;This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I&amp;#39;ll try to do my best with it!&lt;/code&gt; gives me a big impression that the &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt; is totally fine. &lt;/p&gt;
+&lt;p&gt;Plus, &lt;code class=&quot;language-text&quot;&gt;AWS CDK&lt;/code&gt; has been giving me problems. When they got a new release, I need to go the &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; to upgrade all my &lt;code class=&quot;language-text&quot;&gt;cdk&lt;/code&gt; modules, otherwise, builds fail, nothing works. &lt;/p&gt;
+&lt;p&gt;After a while, I still could not have any clue of what is going on, I tried run this thing on my &lt;code class=&quot;language-text&quot;&gt;WSL&lt;/code&gt; since it’s running on the Linux box, as my friend suggested. But the result is everything fine. &lt;/p&gt;
+&lt;h3&gt;So what went wrong…&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;
+Finally, I noticed one of my debug command regarding my NPM VERSION&lt;/p&gt;
+&lt;p&gt;In my build script, I did put in a &lt;code class=&quot;language-text&quot;&gt;NodeTool@0&lt;/code&gt;, which is provided by Azure Pipeline. And I specify the verison to &lt;code class=&quot;language-text&quot;&gt;16.x&lt;/code&gt;. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; NodeTool@0
+    &lt;span class=&quot;token key atrule&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;token key atrule&quot;&gt;versionSpec&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;16.x&apos;&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;displayName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Install NodeJS&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a46ca1c0b6e23ed93427ea12aa1c2679/13e20/node-tools.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.72972972972974%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABqklEQVQoz32TaXLbMAyFdYx6kayFm0it1i7bcXv/Q70CcJKmM01/fANwewRAMCprh+beYug67NuC0lkk8RnpJfmWSxKjyDNUVcA0jRiuPbwvoVWByJYGpjGovEffNjIZn89y6H9k6QWOLh+Hqwg6a+WSSBeFLJraCLalhSJHnqUCb/oOFj4dfuB4OFAQJ8ks4oh86TAMvaTLNy7zRIy433Z0bS3rgVKqghf7MWarVQ6jFRQFwYigNRrTOFDYRg5d+058voA3M7yP576O+dzHmZevESlKmQ+y4Ol4pIga3PZN6rKti2wWcYqmdO7dWoHXpObxn5p/prxSikPfksiM5+Mm/Ho+Pu1X/+fbXfzx2kFxLeMTiZ3FRhw+P/m637E/npiXDVVLbVC3Qll3BPtUhlCLz7jQIEkzpIVGpgxybaCsfwlyKvO6YZoXepwR47ximGb4qoYtA5yvyHqhJFEXKsGHQOMKoaZ2sw45CYugNgWasUZL1ENFdaL24Yuods4oQsuYfe+MzAvkW6PEFtRiCbWO1JCLmWb0A9LkZWnMPfU38Tv/mn89Cv+i32TFQln5p68wAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;node-tools&quot;
+        title=&quot;node-tools&quot;
+        src=&quot;/static/a46ca1c0b6e23ed93427ea12aa1c2679/fcda8/node-tools.png&quot;
+        srcset=&quot;/static/a46ca1c0b6e23ed93427ea12aa1c2679/12f09/node-tools.png 148w,
+/static/a46ca1c0b6e23ed93427ea12aa1c2679/e4a3f/node-tools.png 295w,
+/static/a46ca1c0b6e23ed93427ea12aa1c2679/fcda8/node-tools.png 590w,
+/static/a46ca1c0b6e23ed93427ea12aa1c2679/13e20/node-tools.png 741w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Yet after I check my node version, it’s still at 14.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6bf4623c5dcae0d93b1a7b45f2df9d3b/13e20/node-version.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 62.83783783783784%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAB0UlEQVQ4y41T2Y7bMAz0d3TjSz51WHZky0eyKLpo//+XpiQXObZoij4MSAnikBxSiT0cRj9gPk84TyMm8gPZtq6QpScUefZXNFWFYXASw7bvWqiyQKKjhncW80SE3iOMXnwOSE9vyLP0CzgJ20qVmIjs2Dcsc3gQllmG2tRoXIPGNlC9QmUqVLWSoFfgYK6UE3Bi9ssiR+K9w/X9gnkJ2PYVP3994MfHd8RllnYCSXHD8/nms1zWaOi+kyqTulKi32ANurbBHM6koxefwY9uAXw2uhfcCBieNOSKuVoh3NYItozr5cA0DkLM2fmuoQE94/mubWo5s67cdsKXa5wpaycTfifCY1vvdosLdkp4kBz7Fh+gu4WSMpzVD0LOEALpt+2IMcK5AW1LbVoL72mNaOLjOEIbQ7DQ2qDXWs5K0SbkOfKiJLJcSImwgT/PCNsF1k/orEdvB/QUbMYAO87Qw4SW78lny+jsiKa3aB2tmPEoyvKTkFuOtEf7ushwLAk+OCMSiE/D4iVPT9+QCd7uyNMnPLe8LousAe9Xnn4ucJFlL3/JK0iFPPbLdccSAy0zaaFylIqWtsjuWf+0/0LCVfEP4Z8iP8bWYlVdfiH4HzLGb1UUeut0+pNRAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;node-version&quot;
+        title=&quot;node-version&quot;
+        src=&quot;/static/6bf4623c5dcae0d93b1a7b45f2df9d3b/fcda8/node-version.png&quot;
+        srcset=&quot;/static/6bf4623c5dcae0d93b1a7b45f2df9d3b/12f09/node-version.png 148w,
+/static/6bf4623c5dcae0d93b1a7b45f2df9d3b/e4a3f/node-version.png 295w,
+/static/6bf4623c5dcae0d93b1a7b45f2df9d3b/fcda8/node-version.png 590w,
+/static/6bf4623c5dcae0d93b1a7b45f2df9d3b/13e20/node-version.png 741w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I started getting frustrated, until I found this: &lt;a href=&quot;https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md&quot;&gt;Ubuntu2004-README.md&lt;/a&gt; from &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&amp;#x26;tabs=yaml&quot;&gt;MS Hosted agent&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;ubuntu-latest&lt;/code&gt; image that I’m using got pre-installed &lt;code class=&quot;language-text&quot;&gt;NodeJS 14.x&lt;/code&gt;. And the &lt;code class=&quot;language-text&quot;&gt;NodeTool@0&lt;/code&gt; does not change anything for the build agent. &lt;/p&gt;
+&lt;p&gt;And this &lt;a href=&quot;https://github.com/aws/aws-cdk/issues/13541&quot;&gt;aws-cdk issue&lt;/a&gt; confirms my error was on the difference of my &lt;code class=&quot;language-text&quot;&gt;npm&lt;/code&gt; version on build agent and my local npm version that generated my &lt;code class=&quot;language-text&quot;&gt;package-lock.json&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Shamail (from the above github issue) has a good enough explanation of what happend: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“My issue was due to the default codebuild image using npm v6.x instead of npm v7.x, which i’m using locally and which produces a lockfileVersion:2 instead of lockfileVersion:1 package-lock.json file. So when codebuild pulls the code from my repo, it’s getting a package-lock.json that isn’t compatible with npm v6.x but it tries to use it anyway without throwing a mismatch error.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;
+Once I done a force delete of my &lt;code class=&quot;language-text&quot;&gt;package-lock.json&lt;/code&gt;, my problem resovled. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[underconstruction]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://fitmavincent.github.io/new-beginnings/</link><guid isPermaLink="false">https://fitmavincent.github.io/new-beginnings/</guid><pubDate>Mon, 15 Jun 2020 10:30:00 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
 right at the coast of the Semantics, a large language ocean. A small river named
@@ -107,7 +264,7 @@ Chinese Dragon. Dragons…]]></description><link>https://fitmavincent.github.io/
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 150%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAeABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFBAL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAU7pTxwFkpuTrNqk0P/EABoQAAIDAQEAAAAAAAAAAAAAAAABAgMREhD/2gAIAQEAAQUCqzqcvInRgmKQrsRpp//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABcQAQADAAAAAAAAAAAAAAAAACEAMDH/2gAIAQEABj8CYZX/AP/EABsQAQEBAAIDAAAAAAAAAAAAAAEAETFREEFx/9oACAEBAAE/IRn6wr1W/ZTw6hJuS3ZOJvEMPw//2gAMAwEAAgADAAAAEHjRgf/EABYRAAMAAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPxB0/8QAFxEBAQEBAAAAAAAAAAAAAAAAABEBIf/aAAgBAgEBPxBcVx//xAAdEAEBAQEAAgMBAAAAAAAAAAABEQAhMUFRYXGB/9oACAEBAAE/EGXS+um5AhPen319aLooq/AxoKOUU5/d4ev3HEwQ5kPGIB6xYc3/2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 150%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAeABQDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAMFBAEC/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAFO6U8cdLJLcnrNqE4P/8QAGhAAAgMBAQAAAAAAAAAAAAAAABEBAgMSEP/aAAgBAQABBQLJdXs/KnQiJIsRsoGM/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxAAAwEAAAAAAAAAAAAAAAAAICExAP/aAAgBAQAGPwJ5Q6H/xAAbEAEBAAIDAQAAAAAAAAAAAAABABEhEEFRkf/aAAgBAQABPyHX6wr5WZTseQ0ziW9JwOkMPj//2gAMAwEAAgADAAAAEKgRsf/EABYRAQEBAAAAAAAAAAAAAAAAAAAREP/aAAgBAwEBPxBMr//EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAgEBPxBcVcf/xAAcEAEBAQEAAgMAAAAAAAAAAAABEQAhMVFBYYH/2gAIAQEAAT8QHXl9d4zATjzp+av1ouj0X0MTCjlFOfujIZ7x1EEOZDxgAYoOb//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -143,7 +300,7 @@ Chinese Dragon. Dragons…]]></description><link>https://fitmavincent.github.io/
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 220.27027027027026%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAsABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBP/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAAB6Jq51kC3iIUJYwF//8QAHRAAAQIHAAAAAAAAAAAAAAAAARESAAIQICIwQf/aAAgBAQABBQKxMaNZKAkd0f/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BX//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BX//EABoQAAICAwAAAAAAAAAAAAAAABARACAhMHH/2gAIAQEABj8Coz0OZ0f/xAAeEAACAQQDAQAAAAAAAAAAAAABEQAQITFBIFFhcf/aAAgBAQABPyGPqjV2obA/DRMgZeoy2NFEEIGPDEDVBxy//9oADAMBAAIAAwAAABDPNs8T/wD/xAAXEQADAQAAAAAAAAAAAAAAAAABEBEh/9oACAEDAQE/ECYjpU1f/8QAGBEBAAMBAAAAAAAAAAAAAAAAARARICH/2gAIAQIBAT8QC4OGP//EAB0QAQADAAIDAQAAAAAAAAAAAAEAESExQRBRYXH/2gAIAQEAAT8QBeBfwlU0NQ0g3RY5GoaKCNJ2dMI0AVg9ptcii3ndsDRr63Mu3SgdLlwmnIaxvIT5XDjDPHUqvH//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 220.27027027027026%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAsABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBP/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAAB6c3WdZAt4iFCWMBf/8QAHRAAAQIHAAAAAAAAAAAAAAAAAQASAhARICIwQf/aAAgBAQABBQKwjGTWQgUXRo//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AV//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AV//xAAYEAACAwAAAAAAAAAAAAAAAAAQESAwUf/aAAgBAQAGPwKDK0On/8QAHBAAAgIDAQEAAAAAAAAAAAAAAREAIRAxQXEg/9oACAEBAAE/IYxzDVtSgPhwmQNvk6w4QiCEDFnkYC8HX1//2gAMAwEAAgADAAAAEG8+zzP/AP/EABgRAAMBAQAAAAAAAAAAAAAAAAEQESEx/9oACAEDAQE/ECYulTV//8QAGBEBAAMBAAAAAAAAAAAAAAAAARARIDH/2gAIAQIBAT8QC44Y/8QAHRABAAICAwEBAAAAAAAAAAAAAQARITEQUWFBcf/aAAgBAQABPxAF0L+Fy4yGoZIJoWGxqCigjSaemDLECsDtF3MRWbHrA0odty6FkKBir2wVKqNWN8eVw1gxx8lVx//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -172,7 +329,7 @@ Chinese Dragon. Dragons…]]></description><link>https://fitmavincent.github.io/
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 31.08108108108108%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAGABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECA//EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAABvIS4jU//xAAYEAEBAAMAAAAAAAAAAAAAAAABAAIDEv/aAAgBAQABBQJ2o9rOV//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGsf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABYQAAMAAAAAAAAAAAAAAAAAAAAQMf/aAAgBAQAGPwIq/8QAGBAAAgMAAAAAAAAAAAAAAAAAIVEAEDH/2gAIAQEAAT8h2IVIVz//2gAMAwEAAgADAAAAEP8A7//EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAwEBPxDUQ//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oACAECAQE/EAIv/8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QhhO6jhFFhZM85AUcer3/2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 31.08108108108108%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAGABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAP/xAAWAQEBAQAAAAAAAAAAAAAAAAADAQL/2gAMAwEAAhADEAAAAaAliNT/xAAYEAEBAAMAAAAAAAAAAAAAAAABAAIDEv/aAAgBAQABBQJ2o9M5X//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGsf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABYQAAMAAAAAAAAAAAAAAAAAAAAQMf/aAAgBAQAGPwIq/8QAGRAAAwADAAAAAAAAAAAAAAAAAAFRESGx/9oACAEBAAE/IbFQzvg20//aAAwDAQACAAMAAAAQf+//xAAWEQEBAQAAAAAAAAAAAAAAAAAAESH/2gAIAQMBAT8Qwh//xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAgBAgEBPxACL//EABkQAQEAAwEAAAAAAAAAAAAAAAERACExQf/aAAgBAQABPxCGFW1GbrwXTXMQFFTq5//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;

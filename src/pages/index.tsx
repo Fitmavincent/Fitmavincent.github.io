@@ -54,14 +54,17 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   {title}
                 </Link>
               </h3>
-              <Image
-                fixed={node.frontmatter.cover.childImageSharp.fixed}              
-                style={{
-                  marginRight: rhythm(1 / 2),
-                  marginBottom: 0,
-                  minWidth: 50,                
-                }}
-              />
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Image
+                  fixed={node.frontmatter.cover.childImageSharp.fixed}              
+                  style={{
+                    marginRight: rhythm(1 / 2),
+                    marginBottom: 0,
+                    minWidth: 50,                
+                  }}
+                  
+                />
+              </Link>                            
               <small>{node.frontmatter.date}</small>
             </header>
             <section>

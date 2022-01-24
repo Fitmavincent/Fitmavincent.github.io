@@ -4,8 +4,6 @@ date: "2022-01-24 23:23:20"
 description: Powershell Batch Rename command.
 ---
 
-# Powershell Batch Rename 
-
 For a long long time, I've been searching for a batch rename tools or command line, or script to do the work. Today, I've tested with a Powershell script that works for me
 
 Example

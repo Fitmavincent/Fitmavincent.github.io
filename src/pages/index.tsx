@@ -47,27 +47,30 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         return (
           <article key={node.fields.slug} className="splash-item">
             <header>
-              <h2
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h2>
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                <Image
-                  fixed={node.frontmatter.cover?.childImageSharp?.fixed}              
+              <div className="splash-col">
+                <h2
                   style={{
-                    marginRight: rhythm(1 / 2),
-                    marginBottom: 0,
-                    minWidth: 50,                
+                    marginBottom: rhythm(1 / 4),
                   }}
-                  
-                />
-              </Link>                            
-              <small>{node.frontmatter.date}</small>
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h2>
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  <Image
+                    className='splash-img'
+                    fluid={node.frontmatter.cover?.childImageSharp?.fluid}
+                    style={{
+                      marginRight: rhythm(1 / 2),
+                      marginBottom: 0,
+                      minWidth: 50,
+                    }}
+
+                  />
+                </Link>
+                <small>{node.frontmatter.date}</small>
+              </div>
             </header>
             <section>
               <p
@@ -112,8 +115,8 @@ export const pageQuery = graphql`
             description
             cover {
               childImageSharp{
-                fixed(width: 590, height: 150){
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 590, maxHeight: 150){
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

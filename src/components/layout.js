@@ -6,8 +6,6 @@ import Header from "../components/header"
 import {rhythm} from "../utils/typography"
 import styled from "styled-components"
 
-import Toggler from '../components/Toggler'
-
 const Layout = ({ location, title, children }) => {
   const Container = styled.div`
     margin-left: auto;
@@ -27,8 +25,8 @@ const Layout = ({ location, title, children }) => {
         transition: 'color 0.2s ease-out, background 0.2s ease-out',
       }}
     >
-      <Toggler></Toggler>  
       <Header location={location} title={title} />
+      
       <main>{children}</main>
       <Footer>
         Copyright © {new Date().getFullYear()}                

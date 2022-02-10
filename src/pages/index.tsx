@@ -8,6 +8,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
+import '../styles/global.css';
+
 type Data = {
   site: {
     siteMetadata: {
@@ -43,9 +45,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
+          <article key={node.fields.slug} className="splash-item">
             <header>
-              <h3
+              <h2
                 style={{
                   marginBottom: rhythm(1 / 4),
                 }}
@@ -53,7 +55,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
+              </h2>
               <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 <Image
                   fixed={node.frontmatter.cover?.childImageSharp?.fixed}              

@@ -1,0 +1,49 @@
+.toggle-btn {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3px;
+}
+.toggle-btn:before, .toggle-btn:after {
+    box-sizing: border-box;
+}
+.toggle-btn label {
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: #252525;
+    overflow: hidden;
+    cursor: pointer;
+}
+.toggle-btn label:before, .toggle-btn label:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: 0.5s ease;
+}
+.toggle-btn label:before {
+    background-color: rgb(255,175,26);
+}
+.toggle-btn label:after {
+    background-color: #252525;
+    left: -58px;
+    transform: scale(0.00001);
+}
+.toggle-btn input[type=checkbox] {
+    display: none;
+}
+.toggle-btn input[type=checkbox]:checked + label:before {
+    background-color: rgb(31,117,254);
+    transform: translateX(20px);
+}
+.toggle-btn input[type=checkbox]:checked + label:after {
+    transform: translateX(75px) scale(1);
+}

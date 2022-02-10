@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkvince_blog=self.webpackChunkvince_blog||[]).push([[682],{5465:function(e,t,n){n.r(t);var l=n(7294),a=(n(2328),n(8678)),c=n(262);t.default=function(e){var t=e.data,n=e.location,i=t.site.siteMetadata.title;return l.createElement(a.Z,{location:n,title:i},l.createElement(c.Z,{title:"About"}),l.createElement("p",null,"About Vince. He is no rock star, just a ",l.createElement("strong",null,"Developer")))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-22cc66411a3c46aff228.js.map

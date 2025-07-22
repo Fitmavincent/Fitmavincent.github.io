@@ -9,12 +9,12 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { frontmatter: { date: DESC } }
           limit: 1000
-          filter:{ 
-            frontmatter: { 
-              title: {regex: "/([^hidden])([^underconstruction])/"} 
-            } 
+          filter:{
+            frontmatter: {
+              title: {regex: "/([^hidden])([^underconstruction])/"}
+            }
           }
         ) {
           edges {

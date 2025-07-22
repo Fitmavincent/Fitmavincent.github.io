@@ -1,11 +1,12 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Projects from "../components/projects"
 import { rhythm } from "../utils/typography"
 
 import '../styles/global.css';
@@ -42,8 +43,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      <Projects />
+      <div className="projects-blog-separator"></div>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        const coverImage = node.frontmatter.cover ? getImage(node.frontmatter.cover) : null
         return (
           <article key={node.fields.slug} className="splash-item">
             <header>
@@ -58,16 +62,18 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   </Link>
                 </h2>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  <Image
-                    className='splash-img'
-                    fluid={node.frontmatter.cover?.childImageSharp?.fluid}
-                    style={{
-                      marginRight: rhythm(1 / 2),
-                      marginBottom: 0,
-                      minWidth: 50,
-                    }}
-
-                  />
+                  {coverImage && (
+                    <GatsbyImage
+                      className='splash-img'
+                      image={coverImage}
+                      alt={title}
+                      style={{
+                        marginRight: rhythm(1 / 2),
+                        marginBottom: 0,
+                        minWidth: 50,
+                      }}
+                    />
+                  )}
                 </Link>
                 <small>{node.frontmatter.date}</small>
               </div>
@@ -96,11 +102,11 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter:{ 
-        frontmatter: { 
-          title: {regex: "/([^hidden])([^underconstruction])/"} 
-        } 
+      sort: { frontmatter: { date: DESC } }
+      filter:{
+        frontmatter: {
+          title: {regex: "/([^hidden])([^underconstruction])/"}
+        }
       }
       ) {
       edges {
@@ -115,9 +121,7 @@ export const pageQuery = graphql`
             description
             cover {
               childImageSharp{
-                fluid(maxWidth: 590, maxHeight: 150){
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 590, height: 150)
               }
             }
           }

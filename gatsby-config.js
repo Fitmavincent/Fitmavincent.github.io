@@ -1,9 +1,10 @@
 module.exports = {
+  trailingSlash: `always`,
   siteMetadata: {
     title: `Vince Blog`,
     author: {
       name: `Vince`,
-      summary: `Who am I? I'm just a software engineer`,
+      summary: `Who am I? Tab Tab Tab...`,
     },
     menuLinks:[
       {
@@ -60,6 +61,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
@@ -73,8 +75,8 @@ module.exports = {
         name: `Gatsby Starter Blog`,
         short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#dbe4ee`,
+        theme_color: `#054a91`,
         display: `minimal-ui`,
         icon: `content/assets/profile-pic.png`,
       },
@@ -90,6 +92,6 @@ module.exports = {
     'gatsby-plugin-dark-mode',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,    
+    // `gatsby-plugin-offline`,
   ],
 }

@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 
 import Layout from "../components/layout"
@@ -8,21 +8,23 @@ import SEO from "../components/seo"
 
 const About = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const aboutImageOne = data.aboutOne?.childImageSharp?.fluid;
-  const aboutImageTwo = data.aboutTwo?.childImageSharp?.fluid;
-  const aboutImageThree = data.aboutThree?.childImageSharp?.fluid;
-  const aboutImages = [aboutImageOne, aboutImageTwo, aboutImageThree];
-  const aboutImage = aboutImages[Math.floor(Math.random()*aboutImages.length)];
+  const aboutImageOne = data.aboutOne ? getImage(data.aboutOne) : null;
+  const aboutImageTwo = data.aboutTwo ? getImage(data.aboutTwo) : null;
+  const aboutImageThree = data.aboutThree ? getImage(data.aboutThree) : null;
+  const aboutImages = [aboutImageOne, aboutImageTwo, aboutImageThree].filter(Boolean);
+  const aboutImage = aboutImages.length > 0 ? aboutImages[Math.floor(Math.random()*aboutImages.length)] : null;
 
-  return (    
+  return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="About" />      
-      <p>About Vince. He is no rock star, just a <strong>Developer</strong></p>
-      <Image
-        className="splash-img"
-        fluid={aboutImage}
-        alt="about-iamge"
-      />
+      <SEO title="About" />
+      <p>About Vince. type type type</p>
+      {aboutImage && (
+        <GatsbyImage
+          className="splash-img"
+          image={aboutImage}
+          alt="about-image"
+        />
+      )}
     </Layout>
   )
 }
@@ -33,23 +35,17 @@ export const pageQuery = graphql`
   query {
     aboutOne: file(absolutePath: { regex: "/about-pic-1.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 590, maxHeight: 800) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 590, height: 800)
       }
     }
     aboutTwo: file(absolutePath: { regex: "/about-pic-2.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 790, maxHeight: 600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 790, height: 600)
       }
     }
     aboutThree: file(absolutePath: { regex: "/about-pic-3.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 790, maxHeight: 600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 790, height: 600)
       }
     }
     site {

@@ -14,7 +14,7 @@
     width: 45px;
     height: 25px;
     border-radius: 100px;
-    background-color: #252525;
+    background-color: var(--polynesian-blue, #054a91);
     overflow: hidden;
     cursor: pointer;
 }
@@ -30,10 +30,10 @@
     transition: 0.5s ease;
 }
 .toggle-btn label:before {
-    background-color: rgb(255,175,26);
+    background-color: var(--safety-orange, #f17300);
 }
 .toggle-btn label:after {
-    background-color: #252525;
+    background-color: var(--polynesian-blue, #054a91);
     left: -58px;
     transform: scale(0.00001);
 }
@@ -41,7 +41,7 @@
     display: none;
 }
 .toggle-btn input[type=checkbox]:checked + label:before {
-    background-color: rgb(31,117,254);
+    background-color: var(--vista-blue, #81a4cd);
     transform: translateX(20px);
 }
 .toggle-btn input[type=checkbox]:checked + label:after {

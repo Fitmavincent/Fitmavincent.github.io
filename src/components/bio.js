@@ -8,9 +8,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Toggler from '../components/Toggler'
+import Toggler from '../components/toggler'
 
 import { rhythm } from "../utils/typography"
 
@@ -19,9 +19,14 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(
+            width: 50
+            height: 50
+            layout: FIXED
+            placeholder: DOMINANT_COLOR
+            formats: [AUTO, WEBP]
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       site {
@@ -62,19 +67,20 @@ const Bio = () => {
           style={linkStyle}
           to={`/about`}
         >
-          <Image
-            fixed={data.avatar.childImageSharp.fixed}
-            alt={author.name}
-            style={{
-              marginRight: rhythm(1 / 2),
-              marginBottom: 0,
-              minWidth: 50,
-              borderRadius: `100%`,
-            }}
-            imgStyle={{
-              borderRadius: `50%`,
-            }}
-          />
+          {data.avatar && (
+            <GatsbyImage
+              image={getImage(data.avatar)}
+              alt={author.name}
+              style={{
+                marginRight: rhythm(1 / 2),
+                marginBottom: 0,
+                borderRadius: `100%`,
+              }}
+              imgStyle={{
+                borderRadius: `100%`,
+              }}
+            />
+          )}
           <p>
             This is <strong>{author.name}</strong>
             <br></br>

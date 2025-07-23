@@ -10,26 +10,34 @@
 
 body {
     /* New Color Palette - Light Mode */
-    --polynesian-blue: #054a91;
-    --steel-blue: #3e7cb1;
-    --vista-blue: #81a4cd;
-    --alice-blue: #dbe4ee;
-    --safety-orange: #f17300;
+    --text: #040316;
+    --background: #fbfbfe;
+    --primary: #1d0736;
+    --secondary: #c0c2ce;
+    --accent: #ffaf1a;
+
+    /* Gradient Variables */
+    --linearPrimarySecondary: linear-gradient(#1d0736, #c0c2ce);
+    --linearPrimaryAccent: linear-gradient(#1d0736, #ffaf1a);
+    --linearSecondaryAccent: linear-gradient(#c0c2ce, #ffaf1a);
+    --radialPrimarySecondary: radial-gradient(#1d0736, #c0c2ce);
+    --radialPrimaryAccent: radial-gradient(#1d0736, #ffaf1a);
+    --radialSecondaryAccent: radial-gradient(#c0c2ce, #ffaf1a);
 
     /* Theme Variables */
-    --bg: var(--alice-blue);
-    --textNormal: var(--polynesian-blue);
-    --textTitle: var(--polynesian-blue);
-    --textLink: var(--steel-blue);
-    --hr: var(--vista-blue);
-    --blockquote: var(--steel-blue);
-    --link: var(--steel-blue);
-    --accent: var(--safety-orange);
+    --bg: var(--background);
+    --textNormal: var(--text);
+    --textTitle: var(--primary);
+    --textLink: var(--primary);
+    --hr: var(--secondary);
+    --blockquote: var(--primary);
+    --link: var(--primary);
+    /* --accent already defined above */
 
     background-color: var(--bg);
     background-image:
-      radial-gradient(circle at 20% 50%, rgba(5, 74, 145, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(129, 164, 205, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, rgba(29, 7, 54, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(192, 194, 206, 0.05) 0%, transparent 50%);
     min-height: 100vh;
     transition: all 0.3s ease;
   }
@@ -37,19 +45,26 @@ body {
   body.dark {
     -webkit-font-smoothing: antialiased;
 
-    /* Dark mode using palette variations */
-    --bg: #1a1a1a;
-    --textNormal: var(--alice-blue);
-    --textTitle: var(--vista-blue);
-    --textLink: var(--safety-orange);
-    --hr: var(--steel-blue);
-    --blockquote: var(--vista-blue);
-    --link: var(--safety-orange);
-    --accent: var(--vista-blue);
+    /* Dark mode using new palette */
+    --text: #eae9fc;
+    --background: #010104;
+    --primary: #c9cee8;
+    --secondary: #373645;
+    --accent: #e69500;
+
+    /* Update theme variables for dark mode */
+    --bg: var(--background);
+    --textNormal: var(--text);
+    --textTitle: var(--primary);
+    --textLink: var(--accent);
+    --hr: var(--secondary);
+    --blockquote: var(--primary);
+    --link: var(--accent);
+    /* --accent already defined above */
 
     background-image:
-      radial-gradient(circle at 20% 50%, rgba(129, 164, 205, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(241, 115, 0, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, rgba(223, 201, 248, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(230, 149, 0, 0.05) 0%, transparent 50%);
   }
 
   /* h3 a {
@@ -65,7 +80,7 @@ body {
   }
 
   .splash-item h2:hover {
-    color: var(--safety-orange);
+    color: var(--accent);
   }
 
   .splash-col {
@@ -83,7 +98,7 @@ body {
 
   .splash-img:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(5, 74, 145, 0.15);
+    box-shadow: 0 8px 25px rgba(29, 7, 54, 0.15);
   }
 
   /* Enhanced link styles */
@@ -92,15 +107,12 @@ body {
   }
 
   a:hover {
-    color: var(--safety-orange) !important;
+    color: var(--accent) !important;
   }
 
-  /* Gradient accent for headers */
+  /* Header styling */
   h1 {
-    background: linear-gradient(135deg, var(--polynesian-blue), var(--steel-blue));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--textTitle);
     transition: all 0.3s ease;
   }
 
@@ -108,27 +120,27 @@ body {
   .splash-item {
     padding: 1.5rem;
     border-radius: 12px;
-    background: rgba(219, 228, 238, 0.5);
-    border: 1px solid rgba(129, 164, 205, 0.2);
+    background: rgba(251, 251, 254, 0.5);
+    border: 1px solid rgba(192, 194, 206, 0.2);
     transition: all 0.3s ease;
     margin-bottom: 2rem;
   }
 
   .splash-item:hover {
-    background: rgba(219, 228, 238, 0.8);
-    border-color: var(--vista-blue);
+    background: rgba(251, 251, 254, 0.8);
+    border-color: var(--secondary);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(5, 74, 145, 0.1);
+    box-shadow: 0 10px 30px rgba(29, 7, 54, 0.1);
   }
 
   body.dark .splash-item {
-    background: rgba(26, 26, 26, 0.8);
-    border-color: rgba(129, 164, 205, 0.3);
+    background: rgba(1, 1, 4, 0.8);
+    border-color: rgba(55, 54, 69, 0.3);
   }
 
   body.dark .splash-item:hover {
-    background: rgba(26, 26, 26, 0.95);
-    border-color: var(--vista-blue);
+    background: rgba(1, 1, 4, 0.95);
+    border-color: var(--secondary);
   }
 
   /* Enhanced navigation styling */
@@ -141,20 +153,20 @@ body {
   }
 
   body.dark nav {
-    background: rgba(26, 26, 26, 0.9);
+    background: rgba(1, 1, 4, 0.9);
   }
 
   /* Enhanced bio section */
   .bio-section {
-    background: linear-gradient(135deg, rgba(219, 228, 238, 0.6), rgba(129, 164, 205, 0.2));
+    background: linear-gradient(135deg, rgba(251, 251, 254, 0.6), rgba(192, 194, 206, 0.2));
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    border: 1px solid rgba(129, 164, 205, 0.3);
+    border: 1px solid rgba(192, 194, 206, 0.3);
   }
 
   body.dark .bio-section {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(129, 164, 205, 0.1));
+    background: linear-gradient(135deg, rgba(1, 1, 4, 0.8), rgba(55, 54, 69, 0.1));
   }
 
   /* Enhanced header styling */
@@ -172,9 +184,9 @@ body {
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 60px;
+    width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, var(--safety-orange), var(--vista-blue));
+    background: var(--linearPrimaryAccent);
     border-radius: 2px;
   }
 

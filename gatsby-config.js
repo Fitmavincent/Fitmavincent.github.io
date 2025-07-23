@@ -1,7 +1,7 @@
 module.exports = {
   trailingSlash: `always`,
   siteMetadata: {
-    title: `Vince Blog`,
+    title: `Vince`,
     author: {
       name: `Vince`,
       summary: `Who am I? Tab Tab Tab...`,

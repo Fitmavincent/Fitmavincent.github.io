@@ -32,7 +32,7 @@ const Navigation = ({ location }) => {
           flex: 1,
           margin: 0,
           padding: 0,
-          listStyle: `none`,          
+          listStyle: `none`,
         }}
       >
         {filteredNavLinks.map(link => (
@@ -42,14 +42,14 @@ const Navigation = ({ location }) => {
               ":last-of-type": {
                 marginRight: 0,
                 padding: 0
-              },                      
+              },
             }}
           >
             <Link
               style={{
                 fontFamily: `Roboto, sans-serif`,
                 fontWeight: `bold`,
-                boxShadow: `none`,              
+                boxShadow: `none`,
               }}
               as={Link}
               to={link.url}

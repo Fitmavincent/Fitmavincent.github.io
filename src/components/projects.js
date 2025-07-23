@@ -30,7 +30,7 @@ const ProjectsGrid = styled.div`
 const ProjectCard = styled.a`
   display: block;
   background: var(--bg);
-  border: 2px solid var(--vista-blue);
+  border: 2px solid var(--secondary);
   border-radius: 12px;
   padding: ${rhythm(1.25)};
   text-decoration: none;
@@ -42,12 +42,12 @@ const ProjectCard = styled.a`
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(62, 124, 177, 0.2);
-    border-color: var(--safety-orange);
+    box-shadow: 0 8px 25px rgba(29, 7, 54, 0.2);
+    border-color: var(--accent);
   }
 
   &:focus {
-    outline: 2px solid var(--safety-orange);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 `
@@ -89,13 +89,26 @@ const ProjectTech = styled.div`
 
 const TechTag = styled.span`
   background: var(--accent);
-  color: white;
-  padding: ${rhythm(0.15)} ${rhythm(0.35)};
-  border-radius: 6px;
-  font-size: ${rhythm(0.4)};
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  color: var(--text);
+  padding: ${rhythm(0.25)} ${rhythm(0.5)};
+  border-radius: 8px;
+  font-size: ${rhythm(0.5)};
+  font-weight: 600;
+  letter-spacing: 0.03em;
   font-family: 'Roboto', sans-serif;
+  border: 2px solid var(--text);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-color: var(--primary);
+  }
 `
 
 const ProjectLinks = styled.div`
@@ -112,7 +125,7 @@ const ProjectLink = styled.span`
   font-family: 'Roboto', sans-serif;
 
   ${ProjectCard}:hover & {
-    color: var(--safety-orange);
+    color: var(--accent);
   }
 `
 

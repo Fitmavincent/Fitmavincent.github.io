@@ -9,7 +9,7 @@ const Header = ({ location, title }) => {
   const H1 = style.h1`
     ...${scale(1.5)}
     margin-bottom: ${rhythm(1.5)};
-    margin-top: 0; 
+    margin-top: 0;
   `
 
   const H3 = style.h3`
@@ -48,13 +48,13 @@ const Header = ({ location, title }) => {
       </H3>
     )
   }
-  return(    
+  return(
     <header>
       <div>
         {header}
         <Navigation location={location}/>
-      </div>      
-    </header>    
+      </div>
+    </header>
   )
 }
 

@@ -30,6 +30,15 @@ export const projectsData = [
     githubUrl: "", // Add if you have a public repo for your customizations
     featured: true
   },
+  {
+    id: 4,
+    title: "JSONata Validator VS Code Extension",
+    description: "A comprehensive VS Code extension for validating JSONata templates with real-time validation, interactive playground, and precise error reporting. Features include multi-line expression support, editor tab selection, and live results similar to try.jsonata.org.",
+    technologies: ["TypeScript", "VS Code API", "JSONata", "Extension Development"],
+    liveUrl: "https://marketplace.visualstudio.com/items?itemName=Fitmavincent.jsonata-validator",
+    githubUrl: "https://github.com/Fitmavincent/jsonata-validator",
+    featured: true
+  },
   // Add more projects here...
 ]
 

@@ -11,16 +11,19 @@ const ProjectsTitle = styled.h2`
   color: var(--textTitle);
   margin-bottom: ${rhythm(1)};
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
 `
 
 const ProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: ${rhythm(1)};
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: ${rhythm(1.5)};
   margin-bottom: ${rhythm(2)};
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: ${rhythm(1)};
   }
 `
 
@@ -29,10 +32,13 @@ const ProjectCard = styled.a`
   background: var(--bg);
   border: 2px solid var(--vista-blue);
   border-radius: 12px;
-  padding: ${rhythm(1)};
+  padding: ${rhythm(1.25)};
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-4px);
@@ -56,31 +62,40 @@ const ProjectImage = styled.img`
 
 const ProjectTitle = styled.h3`
   color: var(--textTitle);
-  margin: 0 0 ${rhythm(0.25)} 0;
-  font-size: ${rhythm(0.75)};
+  margin: 0 0 ${rhythm(0.5)} 0;
+  font-size: ${rhythm(0.8)};
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: 'Roboto', sans-serif;
 `
 
 const ProjectDescription = styled.p`
   color: var(--textNormal);
-  margin: 0 0 ${rhythm(0.5)} 0;
-  font-size: ${rhythm(0.5)};
-  line-height: 1.5;
+  margin: 0 0 ${rhythm(0.75)} 0;
+  font-size: ${rhythm(0.6)};
+  line-height: 1.6;
+  flex-grow: 1;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-family: 'Roboto', sans-serif;
 `
 
 const ProjectTech = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${rhythm(0.25)};
-  margin-bottom: ${rhythm(0.5)};
+  gap: ${rhythm(0.3)};
+  margin-bottom: ${rhythm(0.75)};
 `
 
 const TechTag = styled.span`
   background: var(--accent);
   color: white;
-  padding: ${rhythm(0.1)} ${rhythm(0.25)};
-  border-radius: 4px;
-  font-size: ${rhythm(0.35)};
+  padding: ${rhythm(0.15)} ${rhythm(0.35)};
+  border-radius: 6px;
+  font-size: ${rhythm(0.4)};
   font-weight: 500;
+  letter-spacing: 0.02em;
+  font-family: 'Roboto', sans-serif;
 `
 
 const ProjectLinks = styled.div`
@@ -91,8 +106,10 @@ const ProjectLinks = styled.div`
 
 const ProjectLink = styled.span`
   color: var(--textLink);
-  font-size: ${rhythm(0.4)};
-  font-weight: 500;
+  font-size: ${rhythm(0.5)};
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-family: 'Roboto', sans-serif;
 
   ${ProjectCard}:hover & {
     color: var(--safety-orange);

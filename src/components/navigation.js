@@ -47,7 +47,7 @@ const Navigation = ({ location }) => {
           >
             <Link
               style={{
-                fontFamily: `Montserrat, sans-serif`,
+                fontFamily: `Roboto, sans-serif`,
                 fontWeight: `bold`,
                 boxShadow: `none`,              
               }}

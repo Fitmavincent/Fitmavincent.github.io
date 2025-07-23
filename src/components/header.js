@@ -13,7 +13,7 @@ const Header = ({ location, title }) => {
   `
 
   const H3 = style.h3`
-    font-family: Montserrat, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin-top: 0,
   `
 

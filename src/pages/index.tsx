@@ -5,6 +5,18 @@ import SEO from "../components/seo"
 import { projectsData } from "../data/projectsData"
 import "../styles/portfolio.css"
 
+const TICKER_ITEMS = [
+  "Product engineering",
+  "AI integrations",
+  "React & TypeScript",
+  "Mobile apps",
+  "Useful experiments",
+]
+
+// Repeated enough times that the copies left on screen still span the widest
+// viewports after the track has scrolled one copy along.
+const TICKER_COPIES = 6
+
 const projectDetails = {
   1: {
     eyebrow: "Mobile product / 2026",
@@ -206,27 +218,28 @@ const PortfolioPage = (_props: PageProps) => {
           className="portfolio-ticker portfolio-mono"
           aria-label="Areas of expertise"
         >
-          <div>
-            <span>Product engineering</span>
-            <b>✳</b>
-            <span>AI integrations</span>
-            <b>✳</b>
-            <span>React &amp; TypeScript</span>
-            <b>✳</b>
-            <span>Mobile apps</span>
-            <b>✳</b>
-            <span>Useful experiments</span>
-            <b>✳</b>
-            <span aria-hidden="true">Product engineering</span>
-            <b aria-hidden="true">✳</b>
-            <span aria-hidden="true">AI integrations</span>
-            <b aria-hidden="true">✳</b>
-            <span aria-hidden="true">React &amp; TypeScript</span>
-            <b aria-hidden="true">✳</b>
-            <span aria-hidden="true">Mobile apps</span>
-            <b aria-hidden="true">✳</b>
-            <span aria-hidden="true">Useful experiments</span>
-            <b aria-hidden="true">✳</b>
+          <div
+            className="portfolio-ticker-track"
+            style={
+              {
+                "--portfolio-ticker-copies": TICKER_COPIES,
+              } as React.CSSProperties
+            }
+          >
+            {Array.from({ length: TICKER_COPIES }, (_, copy) => (
+              <div
+                className="portfolio-ticker-group"
+                key={copy}
+                aria-hidden={copy > 0}
+              >
+                {TICKER_ITEMS.map(item => (
+                  <React.Fragment key={item}>
+                    <span>{item}</span>
+                    <b>✳</b>
+                  </React.Fragment>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
 

@@ -239,10 +239,11 @@ body:has(.portfolio-page) {
 }
 
 .portfolio-orbit {
+  --portfolio-orbit-size: clamp(176px, 23vw, 320px);
   position: relative;
   display: grid;
-  width: min(100%, 340px);
-  aspect-ratio: 1;
+  width: var(--portfolio-orbit-size);
+  height: var(--portfolio-orbit-size);
   place-items: center;
   justify-self: end;
   animation: portfolio-orbit-in 1100ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -266,8 +267,8 @@ body:has(.portfolio-page) {
 .portfolio-avatar {
   position: relative;
   z-index: 1;
-  width: 40%;
-  aspect-ratio: 1;
+  width: calc(var(--portfolio-orbit-size) * 0.4);
+  height: calc(var(--portfolio-orbit-size) * 0.4);
   padding: 7px;
   border: 1px solid rgba(230, 149, 0, 0.45);
   border-radius: 50%;
@@ -338,11 +339,20 @@ body:has(.portfolio-page) {
   white-space: nowrap;
 }
 
-.portfolio-ticker > div {
-  display: inline-flex;
-  min-width: max-content;
-  align-items: center;
+.portfolio-ticker-track {
+  display: flex;
+  width: max-content;
   animation: portfolio-marquee 32s linear infinite;
+  will-change: transform;
+}
+
+/* Each group is an identical copy of the phrase list, so shifting the track by
+   exactly one group width loops without a seam. Enough copies are rendered
+   that the remaining ones always cover the viewport. */
+.portfolio-ticker-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
 }
 
 .portfolio-ticker span {
@@ -775,8 +785,11 @@ body:has(.portfolio-page) {
   }
 }
 @keyframes portfolio-marquee {
+  from {
+    transform: translateX(0);
+  }
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-100% / var(--portfolio-ticker-copies, 6)));
   }
 }
 
@@ -799,10 +812,10 @@ body:has(.portfolio-page) {
   }
 
   .portfolio-orbit {
+    --portfolio-orbit-size: 205px;
     position: absolute;
     top: 82px;
     right: -75px;
-    width: 205px;
     opacity: 0.48;
   }
 

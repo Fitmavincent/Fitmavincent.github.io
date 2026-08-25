@@ -144,7 +144,7 @@ body {
   }
 
   /* Enhanced navigation styling */
-  nav {
+  body:not(:has(.portfolio-page)) nav {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 8px;
@@ -152,7 +152,7 @@ body {
     margin-bottom: 1rem;
   }
 
-  body.dark nav {
+  body.dark:not(:has(.portfolio-page)) nav {
     background: rgba(1, 1, 4, 0.9);
   }
 

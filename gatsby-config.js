@@ -6,7 +6,7 @@ module.exports = {
       name: `Vince`,
       summary: `Who am I? Tab Tab Tab...`,
     },
-    menuLinks:[
+    menuLinks: [
       {
         name: `Blog`,
         url: `/`,
@@ -16,8 +16,8 @@ module.exports = {
         url: `/about`,
       },
     ],
-    description: `A personal blog that recording what I learn & how I feel.`,
-    siteUrl: `https://fitmavincent.github.io/`,
+    description: `Vince is a Brisbane-based product engineer building useful software across web, mobile, data, and AI.`,
+    siteUrl: `https://fitmavincent.dev/`,
     social: {
       twitter: `meh, don't wanna tell you`,
     },
@@ -72,11 +72,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Vince — Product Engineer`,
+        short_name: `Vince`,
         start_url: `/`,
-        background_color: `#dbe4ee`,
-        theme_color: `#054a91`,
+        background_color: `#080908`,
+        theme_color: `#e69500`,
         display: `minimal-ui`,
         icon: `content/assets/profile-pic.png`,
       },
@@ -89,7 +89,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    'gatsby-plugin-dark-mode',
+    "gatsby-plugin-dark-mode",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

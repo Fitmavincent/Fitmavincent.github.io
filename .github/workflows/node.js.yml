@@ -1,8 +1,6 @@
 name: Build and deploy Gatsby
 
 on:
-  pull_request:
-    branches: [source]
   push:
     branches: [source]
   workflow_dispatch:
